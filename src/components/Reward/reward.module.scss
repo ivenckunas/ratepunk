@@ -39,39 +39,60 @@
       }
     }
 
-    input {
-      background-image: url('../../assets/email.svg');
-      background-size: 16px;
-      background-position: 13px 17px;
-      background-repeat: no-repeat;
-      padding: 16px 20px 18px 40px;
-      border: 1px solid #1F343E;
-      border-radius: 8px;
-      margin-bottom: 16px;
-
-      &::placeholder {
-        font-family: Noto Sans;
-        font-size: 16px;
-        color: #6D7A80;
-      }
-
-      &:hover {
-        cursor: pointer;
-      }
-    }
-
-    button {
-      background-color: #4EB3E3;
-      border: 1px solid #1F343E;
-      border-radius: 8px;
-      padding: 17px;
-      color: #FFFFFF;
-      text-align: center;
-      text-transform: capitalize;
+    form {
       font-family: Noto Sans;
-      font-weight: 700;
-      font-size: 16px;
-      margin-bottom: 71px;
+      display: flex;
+      flex-direction: column;
+
+      input {
+        background-image: url('../../assets/email.svg');
+        background-size: 16px;
+        background-position: 13px 17px;
+        background-repeat: no-repeat;
+        padding: 16px 20px 18px 40px;
+        border: 1px solid #1F343E;
+        border-radius: 8px;
+        margin-bottom: 16px;
+
+        &::placeholder {
+          font-family: Noto Sans;
+          font-size: 16px;
+          color: #6D7A80;
+        }
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+
+      button {
+        background-color: #4EB3E3;
+        border: 1px solid #1F343E;
+        border-radius: 8px;
+        padding: 17px;
+        color: #FFFFFF;
+        text-align: center;
+        text-transform: capitalize;
+        font-family: Noto Sans;
+        font-weight: 700;
+        font-size: 16px;
+        margin-bottom: 71px;
+      }
+
+      .error {
+        font-size: 12px;
+        color: #ED6F82;
+        margin-bottom: 7px;
+      }
+
+      .success {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        font-size: 16px;
+        font-weight: 700;
+        margin-bottom: 16px;
+      }
     }
 
   }
