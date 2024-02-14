@@ -1,0 +1,130 @@
+.container {
+  padding: 32px 16px 48px 16px;
+  background: #F8CC5D;
+  border-top: 1px solid #1F343E;
+  border-bottom: 1px solid #1F343E;
+
+  .referContainer {
+    display: flex;
+    flex-direction: column;
+    background-color: #F8F4F9;
+    padding: 32px 16px;
+    margin-bottom: 48px;
+    border: 1px solid #1F343E;
+    border-radius: 16px;
+    text-align: left;
+
+    h1 {
+
+      font-family: Caveat Brush;
+      font-size: 32px;
+      font-weight: 400;
+      letter-spacing: 0px;
+      color: #1F343E;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+
+    p {
+      font-family: Noto Sans;
+      font-size: 16px;
+
+      &:first-of-type {
+        color: #1F343E;
+        margin-bottom: 24px;
+      }
+
+      &:last-of-type {
+        color: #6D7A80;
+      }
+    }
+
+    input {
+      background-image: url('../../assets/email.svg');
+      background-size: 16px;
+      background-position: 13px 17px;
+      background-repeat: no-repeat;
+      padding: 16px 20px 18px 40px;
+      border: 1px solid #1F343E;
+      border-radius: 8px;
+      margin-bottom: 16px;
+
+      &::placeholder {
+        font-family: Noto Sans;
+        font-size: 16px;
+        color: #6D7A80;
+      }
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    button {
+      background-color: #4EB3E3;
+      border: 1px solid #1F343E;
+      border-radius: 8px;
+      padding: 17px;
+      color: #FFFFFF;
+      text-align: center;
+      text-transform: capitalize;
+      font-family: Noto Sans;
+      font-weight: 700;
+      font-size: 16px;
+      margin-bottom: 71px;
+    }
+
+  }
+
+  .cardsContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 48px;
+
+
+    .card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      img {
+        margin-bottom: 32px;
+      }
+
+      .cardInfo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        h2 {
+          font: normal normal normal 32px/40px Caveat Brush;
+          letter-spacing: 0px;
+          color: #1F343E;
+          text-transform: uppercase;
+          margin-bottom: 16px;
+        }
+
+        p {
+          text-align: center;
+
+          &:first-of-type {
+            letter-spacing: 1.28px;
+            color: #4EB3E3;
+            text-transform: uppercase;
+            font: normal normal bold 16px/24px Gadugi;
+            margin-bottom: 16px;
+          }
+
+          &:last-of-type {
+            letter-spacing: 0px;
+            color: #1F343E;
+            font: normal normal normal 16px/24px Noto Sans;
+          }
+
+        }
+      }
+    }
+  }
+
+}

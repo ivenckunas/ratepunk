@@ -1,0 +1,56 @@
+.container {
+  background-color: #45565E;
+  border-bottom: 1px solid #1F343E;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+
+
+  p {
+    text-align: center;
+    color: #FFFFFF;
+    font-family: Noto Sans;
+    font-size: 16px;
+
+    span {
+      font-size: 17px;
+      margin-right: 15px;
+    }
+  }
+
+  .storeCard {
+    border: 1px solid #1F343E;
+    border-radius: 16px;
+    padding: 16px 32px 15px 24px;
+    display: flex;
+    align-items: flex-end;
+
+
+    div {
+      display: flex;
+      flex-direction: column;
+      padding-left: 15px;
+
+      p {
+        text-align: left;
+        color: #F8F4F9;
+        font-family: Nato Sans;
+
+        &:first-of-type {
+          font-size: 16px;
+        }
+
+        &:last-of-type {
+          font-size: 20px;
+          font-weight: 700;
+        }
+      }
+    }
+
+    &:last-of-type {
+      margin-bottom: 8px;
+    }
+  }
+}
