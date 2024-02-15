@@ -3,4 +3,40 @@
   justify-content: space-between;
   align-items: center;
   padding: 12px 16px;
+  position: relative;
+
+  .menuHide {
+    width: -webkit-fill-available;
+    position: absolute;
+    top: -150px;
+    left: 0px;
+    transition: 0.2s ease-in-out;
+  }
+
+  .menuShow {
+    width: -webkit-fill-available;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: 0.2s ease-in-out;
+    padding: 12px 16px;
+    background-color: #FFFFFF;
+
+    .menuHeader {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 33px;
+    }
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+
+    li {
+      margin-bottom: 16px;
+      text-transform: capitalize;
+    }
+  }
 }
