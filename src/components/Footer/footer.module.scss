@@ -82,7 +82,9 @@
   .footerContainer {
     max-width: 1120px;
     margin: 0 auto;
+    padding: 64px 0px 58px 0px;
     display: grid;
+    justify-content: space-between;
     grid-template-areas:
       "about about links contact"
       "copyright copyright links social"

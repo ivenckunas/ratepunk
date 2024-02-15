@@ -3,9 +3,11 @@ import styles from './reward.module.scss';
 import successLogo from '../../assets/success.svg';
 import {z} from 'zod';
 import Image from 'next/image';
+import {getEmail} from '@/helpers/getEmail';
+import {updateEmail} from '@/helpers/updateEmail';
 
 export default function Refer() {
-	const [email, setEmail] = useState('');
+	const [email, setEmail] = useState<string>('');
 	const [placeHolderText, setPlaceHolderText] = useState('Enter your email address');
 	const [error, setError] = useState('');
 	const [confirmed, setConfirmed] = useState(false);
@@ -13,20 +15,19 @@ export default function Refer() {
 	const ref = useRef<HTMLFormElement>(null);
 
 	useEffect(() => {
-		const lastEmail: string | null = localStorage.getItem('lastEmail');
-		console.log('last entered email ===', lastEmail);
+		getEmail();
 	}, []);
 
 	const onSubmit = (event: FormEvent<HTMLFormElement>) => {
 		event.preventDefault();
 		try {
 			emailSchema.parse(email);
-			setError('');
 			setConfirmed(true);
-			localStorage.setItem('lastEmail', email);
-			setEmail('');
-			ref.current?.reset();
+			updateEmail(email);
 			setPlaceHolderText('https://ratepunk.com/referral');
+			setEmail('');
+			setError('');
+			ref.current?.reset();
 		} catch (error) {
 			setError('Email is invalid');
 		}
