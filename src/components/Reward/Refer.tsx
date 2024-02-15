@@ -1,4 +1,4 @@
-import {FormEvent, useRef, useState} from 'react';
+import {FormEvent, useEffect, useRef, useState} from 'react';
 import styles from './reward.module.scss';
 import successLogo from '../../assets/success.svg';
 import {z} from 'zod';
@@ -12,12 +12,18 @@ export default function Refer() {
 	const emailSchema = z.string().email().min(5);
 	const ref = useRef<HTMLFormElement>(null);
 
+	useEffect(() => {
+		const lastEmail: string | null = localStorage.getItem('lastEmail');
+		console.log('last entered email ===', lastEmail);
+	}, []);
+
 	const onSubmit = (event: FormEvent<HTMLFormElement>) => {
 		event.preventDefault();
 		try {
 			emailSchema.parse(email);
 			setError('');
 			setConfirmed(true);
+			localStorage.setItem('lastEmail', email);
 			setEmail('');
 			ref.current?.reset();
 			setPlaceHolderText('https://ratepunk.com/referral');
