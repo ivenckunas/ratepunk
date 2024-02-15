@@ -4,9 +4,11 @@ import Steps from './Steps';
 
 export default function Reward() {
 	return (
-		<section className={styles.container}>
-			<Refer />
-			<Steps />
-		</section>
+		<div className={styles.container}>
+			<div className={styles.rewardContainer}>
+				<Refer />
+				<Steps />
+			</div>
+		</div>
 	);
 }

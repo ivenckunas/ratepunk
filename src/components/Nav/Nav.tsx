@@ -6,38 +6,44 @@ import close from '../../assets/close.svg';
 import {useState} from 'react';
 
 export default function Nav() {
-	const [showBurger, setShowBurger] = useState(false);
+	const [burgerOpen, setBurgerOpen] = useState(false);
 
-	const handleBurgerClick = () => {
-		setShowBurger(!showBurger);
+	const toggleBurger = () => {
+		setBurgerOpen(!burgerOpen);
 	};
 
 	return (
 		<div className={styles.container}>
-			<Image
-				src={logo}
-				alt='RatePunk logo'
-			/>
-			{showBurger ? (
-				<>
-					<Image
-						onClick={() => setShowBurger(false)}
-						src={close}
-						alt='RatePunk logo'
-					/>
-					<ul>
-						<li>Chrome extension</li>
-						<li>Price Comparison</li>
-						<li>Blog</li>
-					</ul>
-				</>
+			<a
+				href='https://www.ratepunk.com'
+				target='_blank'
+			>
+				<Image
+					src={logo}
+					alt='RatePunk logo'
+				/>
+			</a>
+			{burgerOpen ? (
+				<Image
+					className={styles.close}
+					onClick={toggleBurger}
+					src={close}
+					alt='RatePunk logo'
+				/>
 			) : (
 				<Image
-					onClick={handleBurgerClick}
+					className={styles.burger}
+					onClick={toggleBurger}
 					src={menu}
 					alt='burger menu'
 				/>
 			)}
+
+			<ul className={burgerOpen ? styles.mobileList : ''}>
+				<li>Chrome Extension</li>
+				<li>Price Comparison</li>
+				<li>Blog</li>
+			</ul>
 		</div>
 	);
 }

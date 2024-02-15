@@ -33,7 +33,7 @@ export default function Refer() {
 	};
 
 	const copyUrl = () => {
-		navigator.clipboard.writeText('https://ratepunk.com/referral');
+		if (confirmed) navigator.clipboard.writeText('https://ratepunk.com/referral');
 	};
 
 	return (
@@ -63,7 +63,12 @@ export default function Refer() {
 					onChange={(e) => setEmail(e.currentTarget.value)}
 					disabled={confirmed}
 				/>
-				{confirmed ? <button onClick={copyUrl}>Copy URL</button> : <button type='submit'>get referral link</button>}
+				<button
+					type='submit'
+					onClick={copyUrl}
+				>
+					{confirmed ? 'Copy URL' : 'get referral link'}
+				</button>
 			</form>
 			<p>Limits on max rewards apply.</p>
 		</div>

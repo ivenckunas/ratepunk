@@ -40,7 +40,9 @@
   .contact {
     margin-bottom: 32px;
 
-    div {
+    a {
+      text-decoration: none;
+      color: black;
       display: flex;
       align-items: center;
       gap: 16px;
@@ -72,5 +74,76 @@
   .copyright {
     font-size: 16px;
     color: #6D7A80;
+  }
+}
+
+
+@media (min-width: 1025px) {
+  .footerContainer {
+    max-width: 1120px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-areas:
+      "about about links contact"
+      "copyright copyright links social"
+    ;
+
+    h2 {
+      font-size: 20px;
+    }
+
+    .about {
+      grid-area: about;
+      max-width: 544px;
+    }
+
+    .links {
+      grid-area: links;
+
+      ul {
+        gap: 16px;
+
+        li {
+          transition: 0.2s;
+
+          &:hover {
+            cursor: pointer;
+            color: #4EB3E3;
+          }
+        }
+      }
+
+    }
+
+    .contact {
+      grid-area: contact;
+
+      a {
+        transition: 0.2s;
+
+        &:hover {
+          cursor: pointer;
+          color: #4EB3E3;
+        }
+      }
+    }
+
+    .social {
+      grid-area: social;
+      margin-top: -65px;
+
+      img {
+        transition: 0.2s;
+
+        &:hover {
+          cursor: pointer;
+          filter: brightness(0.8);
+        }
+      }
+    }
+
+    .copyright {
+      grid-area: copyright;
+    }
   }
 }

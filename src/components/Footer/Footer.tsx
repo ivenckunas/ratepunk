@@ -12,10 +12,15 @@ export default function Footer() {
 	return (
 		<div className={styles.footerContainer}>
 			<div className={styles.about}>
-				<Image
-					src={logo}
-					alt='RatePunk logo'
-				/>
+				<a
+					href='https://www.ratepunk.com'
+					target='_blank'
+				>
+					<Image
+						src={logo}
+						alt='RatePunk logo'
+					/>
+				</a>
 				<p>Ratepunk compares hotel room prices across the major online travel agencies. When you search for a room, Ratepunk extension scans the top booking sites and runs a price comparison, so you can be confident in knowing you’re getting the best deal!</p>
 			</div>
 			<div className={styles.links}>
@@ -30,7 +35,7 @@ export default function Footer() {
 			</div>
 			<div className={styles.contact}>
 				<h2>CONTACT</h2>
-				<div>
+				<a href='mailto: hi@ratepunk.com'>
 					<Image
 						src={email}
 						alt=''
@@ -38,7 +43,7 @@ export default function Footer() {
 						width={16}
 					/>
 					<p>hi@ratepunk.com</p>
-				</div>
+				</a>
 			</div>
 			<div className={styles.social}>
 				<h2>SOCIAL</h2>
