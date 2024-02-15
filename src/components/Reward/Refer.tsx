@@ -8,9 +8,9 @@ import {updateEmail} from '@/helpers/updateEmail';
 
 export default function Refer() {
 	const [email, setEmail] = useState<string>('');
-	const [placeHolderText, setPlaceHolderText] = useState('Enter your email address');
-	const [error, setError] = useState('');
-	const [confirmed, setConfirmed] = useState(false);
+	const [placeHolderText, setPlaceHolderText] = useState<string>('Enter your email address');
+	const [error, setError] = useState<string>('');
+	const [confirmed, setConfirmed] = useState<boolean>(false);
 	const emailSchema = z.string().email().min(5);
 	const ref = useRef<HTMLFormElement>(null);
 
