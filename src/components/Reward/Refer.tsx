@@ -5,12 +5,11 @@ import {z} from 'zod';
 import Image from 'next/image';
 
 export default function Refer() {
-	const [email, setEmail] = useState<string>('');
-	const [placeHolderText, setPlaceHolderText] = useState<string>('Enter your email address');
-	const [error, setError] = useState<string>('');
-	const [confirmed, setConfirmed] = useState<boolean>(false);
+	const [email, setEmail] = useState('');
+	const [placeHolderText, setPlaceHolderText] = useState('Enter your email address');
+	const [error, setError] = useState('');
+	const [confirmed, setConfirmed] = useState(false);
 	const emailSchema = z.string().email().min(5);
-
 	const ref = useRef<HTMLFormElement>(null);
 
 	const onSubmit = (event: FormEvent<HTMLFormElement>) => {
